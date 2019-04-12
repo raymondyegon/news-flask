@@ -60,5 +60,6 @@ def process_results(news_list):
         
         if urlToImage:
             news_object = News(author, title, description, url, urlToImage, content)
+            news_results.append(news_object)
     
     return news_results

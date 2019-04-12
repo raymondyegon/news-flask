@@ -12,4 +12,4 @@ def index():
 
     title = "News headlines"
 
-    return render_template("index.html", title = title, top = top_headlines)
+    return render_template("index.html", title = title, top=top_headlines)

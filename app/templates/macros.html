@@ -1,0 +1,14 @@
+{% macro dispalyNewsList(list) %}
+    {% for new in list %}
+
+    <div>
+        <img src="{{new.urlToImage}}" alt="{{new.title}}" class="img-responsive">
+
+        <li>
+            {{ new.title | truncate(10)  }}
+        </li>
+
+    </div>
+
+    {% endfor %}
+{% endmacro %}
