@@ -7,11 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     {% if title %}
-    <title>{{ title }}</title>
+
+    <title> {{ title}}</title>
 
     {% else %}
 
-    <title> Welcome to the best News Website </title>
+    <title> Welcome to the best Movie Review website </title>
 
     {% endif %}
 
@@ -19,15 +20,20 @@
 
 <body>
 
+    {% extends 'base.html' %}
+
+    {% import 'macros.html' as macro %}
+
+    <!-- Content Block-->
+    {% block content%}
     <h3> Top News Headline </h3>
-    
+
     <ul>
-        {% for new_top in top %}
-
-            <li> {{ new_top.title}} </li>
-
-        {% endfor %}
+        {{ macro.dispalyNewsList(top) }}
     </ul>
+
+    {% endblock %}
+
 
 </body>
 
