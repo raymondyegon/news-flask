@@ -26,11 +26,17 @@
 
     <!-- Content Block-->
     {% block content%}
-    <h3> Top News Headline </h3>
+    <div class="container">
 
-    <ul>
-        {{ macro.dispalyNewsList(top) }}
-    </ul>
+    <h3 class="text-center"> Top News Headline </h3>
+        
+            
+            {{ macro.dispalyNewsList(top) }}
+
+        
+    </div>
+
+
 
     {% endblock %}
 

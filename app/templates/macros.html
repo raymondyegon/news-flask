@@ -1,18 +1,31 @@
 {% macro dispalyNewsList(news_list) %}
 {% for new in news_list %}
-
-<li>
-    <div class="card" style="width:18rem;">
-        <img src="{{new.urlToImage}}" alt="{{new.title}}" class="card-img-top">
-
-        <div class="card-body">
-            <h5> {{ new.title}}</h5>
-            <p>{{ new.description }}</p>
-            <a href="{{new.url}}" class="btn btn-primary" target="_blank">Find out more</a>
-        </div>
-</li>
-
+<div class="row featurette">
+    <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">
+            {{ new.title | truncate(30)}}
+        </h2>
+        <p class="lead"> {{ new.description }} </p>
+        <a href="{{new.url}}" class="btn btn-primary" target="_blank">Find out more &raquo;</a>
+    </div>
+    <div class="col-md-5 order-md-1">
+       <img src="{{ new.urlToImage }}" width="500" height="500" class="bd-placeholder-img-lg featurette-image img-fluid mx-auto" >
+    </div>
 </div>
+<hr class="featurette-divider">
 
+
+<!-- <div class="card-deck">
+<div class="card">
+    <img src="{{new.urlToImage}}" alt="{{new.title}}" class="card-img-top">
+
+    <div class="card-body">
+        <h5 class="card-title"> {{ new.title | truncate(20) }}</h5>
+        <p class="card-text">{{ new.description }}</p>
+        <a href="{{new.url}}" class="btn btn-primary" target="_blank">Find out more</a>
+
+    </div>
+</div>
+</div> -->
 {% endfor %}
 {% endmacro %}
