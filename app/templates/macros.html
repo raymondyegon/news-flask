@@ -3,7 +3,7 @@
 <div class="row featurette">
     <div class="col-md-7 order-md-2">
         <h2 class="featurette-heading">
-            {{ new.title | truncate(30)}}
+            {{ new.title | truncate(50)}}
         </h2>
         <p class="lead"> {{ new.description }} </p>
         <a href="{{new.url}}" class="btn btn-primary" target="_blank">Find out more &raquo;</a>
@@ -14,18 +14,5 @@
 </div>
 <hr class="featurette-divider">
 
-
-<!-- <div class="card-deck">
-<div class="card">
-    <img src="{{new.urlToImage}}" alt="{{new.title}}" class="card-img-top">
-
-    <div class="card-body">
-        <h5 class="card-title"> {{ new.title | truncate(20) }}</h5>
-        <p class="card-text">{{ new.description }}</p>
-        <a href="{{new.url}}" class="btn btn-primary" target="_blank">Find out more</a>
-
-    </div>
-</div>
-</div> -->
 {% endfor %}
 {% endmacro %}
