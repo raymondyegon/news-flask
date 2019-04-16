@@ -1,6 +1,6 @@
 import urllib.request
 import json
-from .models import News
+from .models import News, Sources
 
 # getting api key
 
@@ -54,6 +54,23 @@ def search_news(topic):
     
     return search_news_results
 
+def sources_news():
+    '''
+    Function to search news sources
+    '''
+    sources_url = "https:/newsapi.org/v2/sources?apiKey{}".format(api_key)
+    
+    with urllib.request.urlopen(sources_url) as url:
+        search_sources_data = url.read()
+        search_sources_response = json.loads(search_sources_data)
+        
+        search_sources_results = None
+        if search_sources_response["sources"]:
+            search_sources_list = search_sources_response["sources"]
+            search_sources_results = process_sources(search_sources_list)
+    
+    return search_sources_results
+    
 
 def process_results(news_list):
     '''
@@ -81,3 +98,22 @@ def process_results(news_list):
             news_results.append(news_object)
     
     return news_results
+
+def process_sources(sources_list):
+    '''
+    
+    '''
+    sources_results = []
+    
+    for sources_item in sources_list:
+        id = sources_item.get("id")
+        name = sources_item.get("name")
+        description = sources_item.get("description")
+        url = sources_item.get("url")
+        category = sources_item.get("category")
+        
+        if url:
+            sources_object = Sources(id, name, description, url, category)
+            sources_results.append(sources_object)
+    
+    return sources_results
