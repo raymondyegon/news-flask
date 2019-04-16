@@ -4,16 +4,25 @@
 
 #### By Raymond Yegon
 
-## Descriptionhon 
+## Description
     This web application is built using Python framework known as Flask. The app displays information about news from most popular sources, top headlines in the World, categorical 
     and also a user can search for any topic he feels like. 
 
 ## Setup/Installation Requirements
-```$ git clone https://github.com/raymondyegon/news-flask.git ```
-`` $ cd news-flask``
-```$ pip install -r requirements.txt ```
-```$ chmod +x start.sh```
-```$ ./start.sh ```
+First clone the repo
+   ```$ git clone https://github.com/raymondyegon/news-flask.git ```
+
+After cloning, navigate to the project:
+   `` $ cd news-flask``
+
+Then install all the requirements through pip:
+   ```$ pip install -r requirements.txt ```
+
+Make the file executable:
+   ```$ chmod +x start.sh```
+
+Run the application:
+   ```$ ./start.sh ```
 
 Now navigate to your browser at: ```localhost:5000```
 
@@ -26,8 +35,9 @@ Now navigate to your browser at: ```localhost:5000```
 *Bootstrap
 
 ## Support and contact details
-{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}
+Incase of any issues please make a pull request and or raise an issue and i will take care of it.
+
 ### License
-*{Determine the license under which this application can be used.  See below for more details on licensing.}*
-Copyright (c) {year} **{List of contributors or company name}**
+MIT LICENSE
+Copyright (c) 2019 **Raymond Yegon**
   
