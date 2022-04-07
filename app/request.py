@@ -41,34 +41,37 @@ def search_news(topic):
     Function to search for news by topic
     '''
     
-    search_news_url = "https://newsapi.org/v2/everything?q={}&apiKey={}".format(topic, api_key)
-    
+    search_news_url = (
+        f"https://newsapi.org/v2/everything?q={topic}&apiKey={api_key}"
+    )
+
+
     with urllib.request.urlopen(search_news_url) as url:
         search_news_data = url.read()
         search_news_response = json.loads(search_news_data)
-        
+
         search_news_results = None
         if search_news_response["articles"]:
             search_news_list = search_news_response["articles"]
             search_news_results = process_results(search_news_list)
-    
+
     return search_news_results
 
 def sources_news():
     '''
     Function to search news sources
     '''
-    sources_url = "https:/newsapi.org/v2/sources?apiKey{}".format(api_key)
-    
+    sources_url = f"https:/newsapi.org/v2/sources?apiKey{api_key}"
+
     with urllib.request.urlopen(sources_url) as url:
         search_sources_data = url.read()
         search_sources_response = json.loads(search_sources_data)
-        
+
         search_sources_results = None
         if search_sources_response["sources"]:
             search_sources_list = search_sources_response["sources"]
             search_sources_results = process_sources(search_sources_list)
-    
+
     return search_sources_results
     
 
